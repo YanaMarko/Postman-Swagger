@@ -54,6 +54,315 @@
       "response": []
     },
     {
+      "name": "Testing status code 1XX",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.be.info;\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "sport"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Testing status code 2XX",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.be.success;\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "sport"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Testing status code 3XX",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.be.redirection;\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "sport"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Testing status code 4XX",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.be.clientError;\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=spor",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "spor"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Testing status code 4XX or 5XX",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.be.error;\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=spor",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "spor"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Testing status code 5XX",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.be.serverError;\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "sport"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Testing status code: Code name has string",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// pm.test(\"Status code name has string\", function () {\r",
+              "//     pm.response.to.have.status(\"OK\");\r",
+              "// });\r",
+              "\r",
+              "// pm.test(\"Status code name has string\", function () {\r",
+              "//     pm.response.to.have.status(\"Not Found\");\r",
+              "// });\r",
+              "\r",
+              "pm.test(\"Status code name has string\", function () {\r",
+              "    pm.response.to.have.status(\"OK\");\r",
+              "    pm.response.to.have.status(\"Not Found\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "sport"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "name": "Testing status code: Successful POST request",
       "event": [
         {
