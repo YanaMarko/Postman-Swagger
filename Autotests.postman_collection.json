@@ -410,7 +410,7 @@
               "pm.test(\"Checking for field content\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.status).to.eql(\"approved\");\r",
-              "    console.log ('Привет, мир') \r",
+              "    console.log ('Привет, мир');\r",
               "});"
             ],
             "type": "text/javascript",
@@ -458,7 +458,61 @@
               "pm.test(\"Checking the NOT operator\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.status).not.eql(\"approved\");\r",
-              "    console.log ('Статус ', jsonData.status) \r",
+              "    console.log ('Статус ', jsonData.status);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 123,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2023-07-10T17:34:02.982Z\",\r\n  \"status\": \"approved\",\r\n  \"complete\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/store/order",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "store",
+            "order"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Checking Boolean Values",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Checking Boolean Values\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.status == 'approved').to.be.true;\r",
+              "    console.log('Статус ', jsonData.status);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking Boolean Values\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.status == 'approved').to.be.false;\r",
+              "    console.log('Статус ', jsonData.status);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -506,7 +560,7 @@
               "pm.test(\"Checking a language with the NOT operator\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.language).not.eql(\"English\");\r",
-              "    console.log ('Язык ', jsonData.language) \r",
+              "    console.log ('Язык ', jsonData.language);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -569,7 +623,7 @@
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.name).to.eql(\"Frontline house\");\r",
-              "    console.log ('Тип расположения: ', jsonData.name) \r",
+              "    console.log ('Тип расположения: ', jsonData.name); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
@@ -577,7 +631,7 @@
               "        \"latitude\": \"-38.383494\",\r",
               "        \"longitude\": \"33.427362\"\r",
               "    });\r",
-              "    console.log ('Координаты локации: ', jsonData.location) \r",
+              "    console.log ('Координаты локации: ', jsonData.location);\r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
@@ -641,6 +695,70 @@
             {
               "key": "place_id",
               "value": "a82d516d07238ed1e1b6931c90b59b86"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Equal signs",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Equal signs ==\", function () {\r",
+              "    pm.expect(jsonData.accuracy == '50').to.be.true;\r",
+              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "});\r",
+              "\r",
+              "// 50 в кавычках и без - это разные типы данных\r",
+              "\r",
+              "pm.test(\"Equal signs ==\", function () {\r",
+              "    pm.expect(jsonData.accuracy == 50).to.be.true;\r",
+              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "});\r",
+              "\r",
+              "// данный тест не прошёл потому что строгое равно(===) проверяет и тип данных\r",
+              "pm.test(\"Equal signs ==\", function () {\r",
+              "    pm.expect(jsonData.accuracy === 50).to.be.true;\r",
+              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=14fef0ee6c650460632a14901550101b",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "maps",
+            "api",
+            "place",
+            "get",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "qaclick123"
+            },
+            {
+              "key": "place_id",
+              "value": "14fef0ee6c650460632a14901550101b"
             }
           ]
         }

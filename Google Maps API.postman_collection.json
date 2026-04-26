@@ -15,7 +15,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{ \r\n\r\n\"location\": { \r\n\r\n\"lat\": -38.383494, \r\n\r\n\"lng\": 33.427362 \r\n\r\n}, \"accuracy\": 50, \r\n\r\n\"name\": \"Frontline house\", \r\n\r\n\"phone_number\": \"(+91) 983 893 3937\", \r\n\r\n\"address\": \"29, side layout, cohen 09\", \r\n\r\n\"types\": [\r\n\r\n \"shoe park\", \r\n\r\n\"shop\"\r\n\r\n ],\r\n\r\n \"website\": \"http://google.com\", \r\n\r\n\"language\": \"French-IN\"\r\n\r\n }",
+          "raw": "{ \r\n\"location\": { \r\n\"lat\": -38.383494, \r\n\"lng\": 33.427362 \r\n}, \"accuracy\": 50, \r\n\"name\": \"Frontline house\", \r\n\"phone_number\": \"(+91) 983 893 3937\", \r\n\"address\": \"29, side layout, cohen 09\", \r\n\"types\": [\r\n \"shoe park\", \r\n\"shop\"\r\n ],\r\n \"website\": \"http://google.com\", \r\n\"language\": \"French-IN\"\r\n }",
           "options": {
             "raw": {
               "language": "json"
@@ -52,7 +52,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=524402785f547b022cdbed899e9eea78",
+          "raw": "https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=a82d516d07238ed1e1b6931c90b59b86",
           "protocol": "https",
           "host": [
             "rahulshettyacademy",
@@ -68,13 +68,11 @@
           "query": [
             {
               "key": "key",
-              "value": "qaclick123",
-              "type": "text"
+              "value": "qaclick123"
             },
             {
               "key": "place_id",
-              "value": "524402785f547b022cdbed899e9eea78",
-              "type": "text"
+              "value": "a82d516d07238ed1e1b6931c90b59b86"
             }
           ]
         }
@@ -121,7 +119,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{ \r\n\r\n\"place_id\":\"524402785f547b022cdbed899e9eea78\",\r\n\r\n \"address\":\"100 Lenina street, RU\", \r\n\r\n\"key\":\"qaclick123\" \r\n\r\n}",
+          "raw": "{ \r\n\"place_id\":\"524402785f547b022cdbed899e9eea78\",\r\n \"address\":\"100 Lenina street, RU\", \r\n\"key\":\"qaclick123\" \r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -230,7 +228,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n\r\n\"place_id\":\"524402785f547b022cdbed899e9eea7\"\r\n\r\n}"
+          "raw": "{\r\n\"place_id\":\"524402785f547b022cdbed899e9eea7\"\r\n}"
         },
         "url": {
           "raw": "https://rahulshettyacademy.com/maps/api/place/delete/json?key=qaclick123",
