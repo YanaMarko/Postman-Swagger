@@ -723,6 +723,7 @@
               "});\r",
               "\r",
               "// данный тест не прошёл потому что строгое равно(===) проверяет и тип данных\r",
+              "\r",
               "pm.test(\"Equal signs ==\", function () {\r",
               "    pm.expect(jsonData.accuracy === 50).to.be.true;\r",
               "    console.log ('Значение поля ', jsonData.accuracy); \r",
