@@ -449,6 +449,116 @@
       "response": []
     },
     {
+      "name": "NOT operator",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Checking the NOT operator\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.status).not.eql(\"approved\");\r",
+              "    console.log ('Статус ', jsonData.status) \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 123,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2023-07-10T17:34:02.982Z\",\r\n  \"status\": \"approved\",\r\n  \"complete\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/store/order",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "store",
+            "order"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "NOT operator for Google Maps API",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Checking a language with the NOT operator\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.language).not.eql(\"English\");\r",
+              "    console.log ('Язык ', jsonData.language) \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 123,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2023-07-10T17:34:02.982Z\",\r\n  \"status\": \"approved\",\r\n  \"complete\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=14fef0ee6c650460632a14901550101b",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "maps",
+            "api",
+            "place",
+            "get",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "qaclick123"
+            },
+            {
+              "key": "place_id",
+              "value": "14fef0ee6c650460632a14901550101b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "name": "Multiple-check test",
       "event": [
         {
