@@ -458,7 +458,7 @@
               "pm.test(\"Checking the NOT operator\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.status).not.eql(\"approved\");\r",
-              "    console.log ('Статус ', jsonData.status);\r",
+              "    console.log (jsonData.status);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -506,13 +506,13 @@
               "pm.test(\"Checking Boolean Values\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.status == 'approved').to.be.true;\r",
-              "    console.log('Статус ', jsonData.status);\r",
+              "    console.log('Статус', jsonData.status);\r",
               "});\r",
               "\r",
               "pm.test(\"Checking Boolean Values\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.status == 'approved').to.be.false;\r",
-              "    console.log('Статус ', jsonData.status);\r",
+              "    console.log('Статус', jsonData.status);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -560,7 +560,7 @@
               "pm.test(\"Checking a language with the NOT operator\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.language).not.eql(\"English\");\r",
-              "    console.log ('Язык ', jsonData.language);\r",
+              "    console.log ('Язык', jsonData.language);\r",
               "});"
             ],
             "type": "text/javascript",
@@ -623,7 +623,7 @@
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.name).to.eql(\"Frontline house\");\r",
-              "    console.log ('Тип расположения: ', jsonData.name); \r",
+              "    console.log ('Тип расположения:', jsonData.name); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
@@ -631,37 +631,37 @@
               "        \"latitude\": \"-38.383494\",\r",
               "        \"longitude\": \"33.427362\"\r",
               "    });\r",
-              "    console.log ('Координаты локации: ', jsonData.location);\r",
+              "    console.log ('Координаты локации:', jsonData.location);\r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.accuracy).to.eql(\"50\");\r",
-              "    console.log ('Точность: ', jsonData.accuracy) \r",
+              "    console.log ('Точность:', jsonData.accuracy) \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.phone_number).to.eql(\"(+91) 983 893 3937\");\r",
-              "    console.log ('Номер телефона: ', jsonData.phone_number) \r",
+              "    console.log ('Номер телефона:', jsonData.phone_number) \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.address).to.eql(\"29, side layout, cohen 09\");\r",
-              "    console.log ('Адрес локации: ', jsonData.address) \r",
+              "    console.log ('Адрес локации:', jsonData.address) \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.types).to.eql(\"shoe park,shop\");\r",
-              "    console.log ('Инфраструктрура: ', jsonData.types) \r",
+              "    console.log ('Инфраструктрура:', jsonData.types) \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.website).to.eql(\"http://google.com\");\r",
-              "    console.log ('Вебсайт: ', jsonData.website) \r",
+              "    console.log ('Вебсайт:', jsonData.website) \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.language).to.eql(\"French-IN\");\r",
-              "    console.log ('Язык: ', jsonData.language) \r",
+              "    console.log ('Язык:', jsonData.language) \r",
               "});"
             ],
             "type": "text/javascript",
@@ -712,21 +712,21 @@
               "\r",
               "pm.test(\"Equal signs ==\", function () {\r",
               "    pm.expect(jsonData.accuracy == '50').to.be.true;\r",
-              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "    console.log (jsonData.accuracy); \r",
               "});\r",
               "\r",
               "// 50 в кавычках и без - это разные типы данных\r",
               "\r",
               "pm.test(\"Equal signs ==\", function () {\r",
               "    pm.expect(jsonData.accuracy == 50).to.be.true;\r",
-              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "    console.log (jsonData.accuracy); \r",
               "});\r",
               "\r",
               "// данный тест не прошёл потому что строгое равно(===) проверяет и тип данных\r",
               "\r",
               "pm.test(\"Equal signs ==\", function () {\r",
               "    pm.expect(jsonData.accuracy === 50).to.be.true;\r",
-              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "    console.log (jsonData.accuracy); \r",
               "});"
             ],
             "type": "text/javascript",
@@ -777,7 +777,7 @@
               "\r",
               "pm.test(\"Checking if a field is empty\", function () {\r",
               "    pm.expect(jsonData.accuracy).eql(null);\r",
-              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "    console.log (jsonData.accuracy); \r",
               "});\r",
               "\r",
               "\r",
@@ -831,7 +831,7 @@
               "\r",
               "pm.test(\"Checking if a field is not empty \", function () {\r",
               "    pm.expect(jsonData.accuracy).not.eql(null);\r",
-              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "    console.log (jsonData.accuracy); \r",
               "});\r",
               "\r",
               "\r",
@@ -868,6 +868,65 @@
             {
               "key": "place_id",
               "value": "14fef0ee6c650460632a14901550101b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Checking a field for part of its content",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Checking a field for part of its content\", function () {\r",
+              "    pm.expect(jsonData.value).to.include(\"Chuck\");\r",
+              "    console.log (jsonData.value);\r",
+              "});\r",
+              "\r",
+              "// проверка работает с любым типом данных\r",
+              "\r",
+              "pm.test(\"Checking a field for part of its content\", function () {\r",
+              "    pm.expect(jsonData.value).to.include(\"Chuck1\");\r",
+              "    console.log (jsonData.value);\r",
+              "});\r",
+              "\r",
+              "// проверка только текстового типа данных\r",
+              "\r",
+              "pm.test(\"Checking a field for part of its content\", function () {\r",
+              "    pm.expect(jsonData.value).to.have.string(\"Chuck\");\r",
+              "    console.log (jsonData.value);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "sport"
             }
           ]
         }
