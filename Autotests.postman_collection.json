@@ -409,7 +409,8 @@
             "exec": [
               "pm.test(\"Checking for field content\", function () {\r",
               "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData.status).to.eql(\"approved\")\r",
+              "    pm.expect(jsonData.status).to.eql(\"approved\");\r",
+              "    console.log ('Привет, мир') \r",
               "});"
             ],
             "type": "text/javascript",
@@ -442,6 +443,95 @@
             "v2",
             "store",
             "order"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Multiple-check test",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.name).to.eql(\"Frontline house\");\r",
+              "    console.log ('Тип расположения: ', jsonData.name) \r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.location).to.eql({\r",
+              "        \"latitude\": \"-38.383494\",\r",
+              "        \"longitude\": \"33.427362\"\r",
+              "    });\r",
+              "    console.log ('Координаты локации: ', jsonData.location) \r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.accuracy).to.eql(\"50\");\r",
+              "    console.log ('Точность: ', jsonData.accuracy) \r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.phone_number).to.eql(\"(+91) 983 893 3937\");\r",
+              "    console.log ('Номер телефона: ', jsonData.phone_number) \r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.address).to.eql(\"29, side layout, cohen 09\");\r",
+              "    console.log ('Адрес локации: ', jsonData.address) \r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.types).to.eql(\"shoe park,shop\");\r",
+              "    console.log ('Инфраструктрура: ', jsonData.types) \r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.website).to.eql(\"http://google.com\");\r",
+              "    console.log ('Вебсайт: ', jsonData.website) \r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking for field content\", function () {\r",
+              "    pm.expect(jsonData.language).to.eql(\"French-IN\");\r",
+              "    console.log ('Язык: ', jsonData.language) \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=a82d516d07238ed1e1b6931c90b59b86",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "maps",
+            "api",
+            "place",
+            "get",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "qaclick123"
+            },
+            {
+              "key": "place_id",
+              "value": "a82d516d07238ed1e1b6931c90b59b86"
+            }
           ]
         }
       },
