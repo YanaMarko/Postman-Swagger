@@ -765,6 +765,114 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Checking if a field is empty",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Checking if a field is empty\", function () {\r",
+              "    pm.expect(jsonData.accuracy).eql(null);\r",
+              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "});\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=14fef0ee6c650460632a14901550101b",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "maps",
+            "api",
+            "place",
+            "get",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "qaclick123"
+            },
+            {
+              "key": "place_id",
+              "value": "14fef0ee6c650460632a14901550101b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Checking if a field is not empty",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Checking if a field is not empty \", function () {\r",
+              "    pm.expect(jsonData.accuracy).not.eql(null);\r",
+              "    console.log ('Значение поля ', jsonData.accuracy); \r",
+              "});\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=14fef0ee6c650460632a14901550101b",
+          "protocol": "https",
+          "host": [
+            "rahulshettyacademy",
+            "com"
+          ],
+          "path": [
+            "maps",
+            "api",
+            "place",
+            "get",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "qaclick123"
+            },
+            {
+              "key": "place_id",
+              "value": "14fef0ee6c650460632a14901550101b"
+            }
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }
