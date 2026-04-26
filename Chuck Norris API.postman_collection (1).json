@@ -1,0 +1,134 @@
+{
+  "info": {
+    "_postman_id": "4a403682-8e02-4aac-b018-2ad7caa658e7",
+    "name": "Chuck Norris API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53530965",
+    "_collection_link": "https://go.postman.co/collection/53530965-4a403682-8e02-4aac-b018-2ad7caa658e7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get a random joke",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a joke about sport",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "sport"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all jokes categories",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/categories",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a joke for a word",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/search?query=sport",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "query",
+              "value": "sport"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a joke for a fake category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/random?category=space",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "random"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "space"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

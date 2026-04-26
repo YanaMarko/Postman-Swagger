@@ -449,7 +449,7 @@
       "response": []
     },
     {
-      "name": "Basic checks for numbers (Swagger)",
+      "name": "Basic tests for different data types (Swagger)",
       "event": [
         {
           "listen": "test",
@@ -461,24 +461,24 @@
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.quantity).to.eql(10);\r",
-              "    console.log (jsonData.quantity) \r",
+              "    console.log (jsonData.quantity);\r",
               "});\r",
               "\r",
               "// поле Не должно совпадать с заданным значением\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.quantity).not.eql(1);\r",
-              "    console.log (jsonData.quantity) \r",
+              "    console.log (jsonData.quantity); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.quantity).to.eql(null);\r",
-              "    console.log (jsonData.quantity) \r",
+              "    console.log (jsonData.quantity); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.quantity).not.eql(null);\r",
-              "    console.log (jsonData.quantity) \r",
+              "    console.log (jsonData.quantity); \r",
               "});\r",
               "\r",
               "pm.test(\"Equal signs === to number\", function () {\r",
@@ -711,32 +711,32 @@
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.accuracy).to.eql(\"50\");\r",
-              "    console.log ('Точность:', jsonData.accuracy) \r",
+              "    console.log ('Точность:', jsonData.accuracy); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.phone_number).to.eql(\"(+91) 983 893 3937\");\r",
-              "    console.log ('Номер телефона:', jsonData.phone_number) \r",
+              "    console.log ('Номер телефона:', jsonData.phone_number); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.address).to.eql(\"29, side layout, cohen 09\");\r",
-              "    console.log ('Адрес локации:', jsonData.address) \r",
+              "    console.log ('Адрес локации:', jsonData.address);\r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.types).to.eql(\"shoe park,shop\");\r",
-              "    console.log ('Инфраструктрура:', jsonData.types) \r",
+              "    console.log ('Инфраструктрура:', jsonData.types); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.website).to.eql(\"http://google.com\");\r",
-              "    console.log ('Вебсайт:', jsonData.website) \r",
+              "    console.log ('Вебсайт:', jsonData.website); \r",
               "});\r",
               "\r",
               "pm.test(\"Checking for field content\", function () {\r",
               "    pm.expect(jsonData.language).to.eql(\"French-IN\");\r",
-              "    console.log ('Язык:', jsonData.language) \r",
+              "    console.log ('Язык:', jsonData.language); \r",
               "});"
             ],
             "type": "text/javascript",
@@ -1003,6 +1003,76 @@
               "key": "category",
               "value": "sport"
             }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Basic tests for numeric data types only (Swagger)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "\r",
+              "// проверка значения 10 и шага от него на 1 единицу, т.е. +-1. включает в себя амплитуду от 9 до 11 включительно\r",
+              "\r",
+              "pm.test(\"Checking +- values\", function () {\r",
+              "    pm.expect(jsonData.quantity).be.closeTo(10, 1);\r",
+              "    console.log (jsonData.quantity);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Checking +- values\", function () {\r",
+              "    pm.expect(jsonData.quantity).be.closeTo(8, 1);\r",
+              "    console.log (jsonData.quantity);\r",
+              "});\r",
+              "\r",
+              "// запрос для проверки, что наше значение(10) Больше чем в запросе (9)\r",
+              "\r",
+              "pm.test(\"Checking bigger value\", function () {\r",
+              "    pm.expect(jsonData.quantity).to.be.above(9);\r",
+              "    console.log (jsonData.quantity);\r",
+              "});\r",
+              "\r",
+              "// запрос для проверки, что наше значение(10) Меньше чем в запросе (11)\r",
+              "\r",
+              "pm.test(\"Checking smaller value\", function () {\r",
+              "    pm.expect(jsonData.quantity).to.be.below(11);\r",
+              "    console.log (jsonData.quantity);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 123,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2023-07-10T17:34:02.982Z\",\r\n  \"status\": \"approved\",\r\n  \"complete\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/store/order",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "store",
+            "order"
           ]
         }
       },
