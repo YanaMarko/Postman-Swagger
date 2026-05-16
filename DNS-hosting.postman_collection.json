@@ -6,5 +6,38 @@
     "_exporter_id": "53530965",
     "_collection_link": "https://go.postman.co/collection/53530965-98772ad0-e542-4e9b-a64f-5aedb06c31b3?source=collection_link"
   },
-  "item": []
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "3zZon_6AuIEqRJOwmX3qkqs8i21JUGUxYs8AVyTY_GU",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "63516f75cc7d2a36812b1d48020d4bd3",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.nic.ru",
+          "protocol": "https",
+          "host": [
+            "api",
+            "nic",
+            "ru"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
 }
